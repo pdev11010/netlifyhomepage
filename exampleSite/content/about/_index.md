@@ -5,6 +5,7 @@ draft: false
 
 # image
 image: "images/author.jpg"
+image: "images/author.jpg"
 
 # meta description
 description: "this is meta description"
