@@ -26,6 +26,18 @@ body {
 img {
   vertical-align: middle;
   border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a.text-primary:hover{
+  color: $primary-color !important;
 }
 
 a,
@@ -39,13 +51,26 @@ select {
   }
 }
 
+a:hover {
+  color: $primary-color;
+}
+
 .slick-slide {
   outline: 0;
 }
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  &-sm {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  &-title {
+    margin-bottom: 30px;
+  }
 }
 
 .bg-cover {
@@ -87,20 +112,20 @@ select {
   background: $primary-color !important;
 }
 
-.bg-secondary {
-  background: $secondary-color !important;
-}
-
-.bg-light{
-  background: $light !important;
-}
-
 .text-primary {
   color: $primary-color !important;
 }
 
-a.text-primary:hover {
+.text-dark {
+  color: $text-color-dark !important;
+}
+a.text-dark:focus,
+a.text-dark:hover {
   color: $primary-color !important;
+}
+
+.text-light {
+  color: $text-color-light !important;
 }
 
 .text-color {
@@ -155,17 +180,25 @@ a.text-primary:hover {
   overflow: hidden;
 }
 
-.shadow {
-  box-shadow: 0 10px 30px 0 rgba(68,74,102,.1) !important;
+.border-primary {
+  border-color: $primary-color !important;
 }
 
+.font-weight-medium{
+  font-weight: 500 !important;
+}
+
+/* form control */
 .form-control{
   height: 50px;
-  line-height: 50px;
+  border-radius: 0;
   &:focus{
-    outline: 0;
     box-shadow: none;
+    outline: 0;
     border-color: $primary-color;
+  }
+  &::placeholder {
+    font-size: 13px;
   }
 }
 
@@ -173,6 +206,6 @@ textarea.form-control{
   height: 150px;
 }
 
-.page-link:focus{
-  box-shadow: none;
+a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover{
+  background: $primary-color !important;
 }

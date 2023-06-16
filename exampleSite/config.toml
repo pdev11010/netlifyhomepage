@@ -1,130 +1,141 @@
-############################ Default configuration #########################
-baseURL = "https://demo.gethugothemes.com/northendlab-light/examplesite/"
+######################## default configuration ####################
+baseURL = "https://demo.gethugothemes.com/liva/examplesite/"
 languageCode = "en-us"
-# site title 
-title = "Northendlab | Blog Template"
-# theme
-theme = "northendlab-light"
-# post pagination
-paginate = "5"
-# post excerpt
+title = "Liva | Personal blog template"
+theme = "liva-hugo"
 summaryLength = "10"
-# disqus short name
-disqusShortname = "" # get your shortname form here : https://disqus.com
+paginate = 6
+disqusShortname = ""
 
 [outputs]
-home = ["HTML", "AMP", "RSS", "JSON"]
+home = ["HTML", "RSS", "JSON"]
 
-########################## Plugings ######################################
+############################# Plugins ##############################
+[params.plugins]
 
-# css plugins
+# CSS Plugins
 [[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
+URL = "plugins/bootstrap/bootstrap.min.css"
 [[params.plugins.css]]
-link = "plugins/themify-icons/themify-icons.css"
+URL = "plugins/slick/slick.css"
+[[params.plugins.css]]
+URL = "plugins/themify-icons/themify-icons.css"
+[[params.plugins.css]]
+URL = "plugins/venobox/venobox.css"
 
-# js plugins
+# JS Plugins
 [[params.plugins.js]]
-link = "plugins/jQuery/jquery.min.js"
+URL = "plugins/jQuery/jquery.min.js"
 [[params.plugins.js]]
-link = "plugins/bootstrap/bootstrap.min.js"
+URL = "plugins/bootstrap/bootstrap.min.js"
 [[params.plugins.js]]
-link = "plugins/search/fuse.min.js"
+URL = "plugins/slick/slick.min.js"
 [[params.plugins.js]]
-link = "plugins/search/mark.js"
+URL = "plugins/venobox/venobox.min.js"
 [[params.plugins.js]]
-link = "plugins/search/search.js"
+URL = "plugins/search/fuse.min.js"
+[[params.plugins.js]]
+URL = "plugins/search/mark.js"
+[[params.plugins.js]]
+URL = "plugins/search/search.js"
 
 
-########################### Navigation ###################################
+############################## navigation ###############################
+[menu]
 
 # main menu
 [[menu.main]]
-URL = "contact/"
-name = "Contact"
+name = "About"
+URL = "about/"
 weight = 1
 
 [[menu.main]]
-URL = "tools/"
-name = "tools"
+name = "Post"
+URL = "blog/"
 weight = 2
 
 [[menu.main]]
-URL = "https://gethugothemes.com/products/northendlab/"
-name = "Buy Premium"
-weight = 2
+name = "Contact"
+URL = "contact/"
+weight = 3
 
 # footer menu
 [[menu.footer]]
-URL = "contact/"
-name = "Contact"
+name = "About"
+URL = "about/"
 weight = 1
 
 [[menu.footer]]
-URL = "tools/"
-name = "tools"
+name = "Post"
+URL = "blog/"
 weight = 2
 
+[[menu.footer]]
+name = "Contact"
+URL = "contact/"
+weight = 3
 
-######################### Default Parameters ###########################
+
+#################### default parameters ################################
 [params]
-# home
+logo = "images/logo.png"
 home = "Home"
-# logo
-logo = "images/logo.svg"
-# meta data
-author = "Themefisher"
+# Meta data
 description = "This is meta description"
-# google tag manager
-google_tag_manager = "" # your id
-# contact form action
-contact_form_action = "#" # contact form works with : https://formspree.io
+author = "Themefisher"
+# Google Analitycs
+googleAnalitycsID = "Your ID"
+# Contact Information
+mobile = "0124857985320"
+email = "demo@email.com"
+location = "Dhaka, Bangladedsh"
 # copyright
-copyright = "&copy; 2020 [Gethugothemes](https://gethugothemes.com) All Rights Reserved"
+copyright = "| copyright &copy; 2021 [Themefisher](https://themefisher.com/hugo-themes/) All Rights Reserved |"
 
-# preloader
+# Preloader
 [params.preloader]
 enable = true
-preloader = "" # use png, jpg, svg or gif format
+preloader = "" # use .png , .svg or .gif format
 
 # search
 [params.search]
 enable = true
+
+############################ news letter ########################
+[params.newsletter]
+enable = true
+title = "Join Our Newsletter"
+content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero"
+
 
 # cookies
 [params.cookies]
 enable = true
 expire_days = 2
 
-####################### banner #######################################
-[params.banner]
-bgImage = "images/banner/banner-bg.svg"
-title = "Hi, I'm John Smith Doe. <br> I help people make the  worlds best software"
-image = "images/banner/illustration.svg"
 
-
-######################## call to action ###############################
-[params.cta]
-enable = true
-image = "images/hugo-muscot.svg"
-title = "Get the best hugo templates"
-description = "Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."
-[params.cta.button]
-enable = true
-label = "Visit Here"
-link = "https://gethugothemes.com/shop/"
-
-
-############################## Social Site ##########################
+############################# social site ########################
 [[params.social]]
-icon = "ti-facebook" # themify icon pack https://themify.me/themify-icons
+title = "facebook"
+icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
 link = "#"
+
 [[params.social]]
-icon = "ti-twitter-alt" # themify icon pack https://themify.me/themify-icons
+title = "twitter"
+icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
 link = "#"
+
 [[params.social]]
-icon = "ti-github" # themify icon pack https://themify.me/themify-icons
+title = "instagram"
+icon = "ti-instagram" # themify icon : https://themify.me/themify-icons
 link = "#"
+
 [[params.social]]
-icon = "ti-linkedin" # themify icon pack https://themify.me/themify-icons
+title = "github"
+icon = "ti-github" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "linkedin"
+icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
 link = "#"

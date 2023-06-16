@@ -1,24 +1,20 @@
 <head>
   <meta charset="utf-8">
-  <title>{{ .Title }}</title>
+  <title>{{ .Site.Title }}</title>
 
   {{ "<!-- mobile responsive meta -->" | safeHTML }}
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description"
-    content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-    {{ with .Site.Params.keywords }}
-    <meta name="keywords" content="{{ . }}">{{ end }}
-    {{ with .Site.Params.author }}
-  <meta name="author" content="{{ . }}">{{ end }}
-  
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    
   <!-- theme meta -->
-  <meta name="theme-name" content="northendlab-light" />
+  <meta name="theme-name" content="liva-hugo" />
   
   {{ hugo.Generator }}
 
   {{ "<!-- plugins -->" | safeHTML }}
   {{ range .Site.Params.plugins.css }}
-  <link rel="stylesheet" href="{{ .link | absURL }} ">
+  <link rel="stylesheet" href="{{ .URL | absURL }} ">
   {{ end }}
 
   {{ "<!-- Main Stylesheet -->" | safeHTML }}
@@ -29,25 +25,21 @@
   <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
   <link rel="icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
 
-  <!-- Google Tag Manager -->
-  {{ with .Site.Params.google_tag_manager}}
+  {{ "<!-- google analitycs -->" | safeHTML }}
   <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', '{{ . }}');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '{{ .Site.Params.googleAnalitycsID }}', 'auto');
+    ga('send', 'pageview');
   </script>
-  {{ end }}
-  <!-- End Google Tag Manager -->
 
 </head>

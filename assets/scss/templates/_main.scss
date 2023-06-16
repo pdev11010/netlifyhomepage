@@ -1,47 +1,187 @@
-/* body */
-/* body {
-  background-image: url(../images/backgrounds/pattern.png);
-} */
+/* card */
+.card {
+  border: 0;
+  border-radius: 0;
 
-/* banner */
-.banner {
-  padding: 220px 0 120px;
-  position: relative;
-  @include desktop-lg {
-    padding: 150px 0 100px;
+  &-header,
+  &-footer,
+  &-img,
+  &-img-top {
+    border: 0;
+    border-radius: 0;
   }
+}
+
+/* /card */
+
+.featured-post {
+  .card-title {
+    margin-left: -10%;
+
+    @include tablet {
+      margin-left: 0;
+      font-size: 30px;
+    }
+  }
+
+  &-slider {
+    @media screen and (min-width: 600px) {
+      .slick-dots {
+        position: absolute;
+        height: 100%;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+
+        li {
+          flex: 1 1 auto;
+          position: relative;
+          list-style-type: none;
+
+          button {
+            position: absolute;
+            padding: 0;
+            border: 0;
+            background: $border-color;
+            color: transparent;
+            overflow: hidden;
+            width: 1px;
+            height: 100%;
+            transition: 0s;
+          }
+
+          &.slick-active {
+            button {
+              background: $primary-color;
+              width: 6px;
+              left: -2px;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 599px) {
+      .slick-dots {
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        right: 0;
+        bottom: -40px;
+        display: flex;
+        padding: 0;
+
+        li {
+          flex: 1 1 auto;
+          position: relative;
+          list-style-type: none;
+          width: 100%;
+          height: 100%;
+
+          button {
+            position: absolute;
+            padding: 0;
+            border: 0;
+            background: $border-color;
+            color: transparent;
+            overflow: hidden;
+            width: 100%;
+            height: 1px;
+          }
+
+          &.slick-active {
+            button {
+              background: $primary-color;
+              top: -2px;
+              height: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.post-meta {
+  span {
+    color: #444;
+    font-weight: 500;
+  }
+}
+
+/* recent post */
+.recent-post-thumb {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.small-post-border {
+  &:not(:last-child) {
+    border-right: 1px solid $border-color;
+
+    @include desktop {
+      border-right: 0;
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+/* widget */
+.widgets {
+  padding-left: 25px;
+  border-left: 1px solid #eee;
   @include desktop {
-    padding: 100px 0 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+.widget {
+  text-align: center;
+  margin-bottom: 50px;
+
+  &-title {
+    display: inline-block;
+    border-top: .5px solid $primary-color;
+    border-bottom: .5px solid $primary-color;
+    padding: 10px 0;
+    margin-bottom: 20px;
   }
 
-  .illustration {
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-    @include desktop-xl {
-      max-width: 600px;
-    }
-    @include desktop {
-      display: none;
+  li {
+    margin-bottom: 10px;
+
+    a {
+      color: $text-color;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
-  .illustration-mobile{
-    display: none;
-    @include desktop {
+}
+
+.social-links {
+  li {
+    a {
+      height: 35px;
+      width: 35px;
+      background: $primary-color;
+      color: $white;
       display: block;
+      line-height: 35px;
+
+      &:hover {
+        color: $white;
+      }
     }
   }
-}
-
-/* blog */
-.block {
-  padding: 60px 60px 40px;
-}
-
-.author-thumb{
-  height: 300px;
-  width: 300px;
-  object-fit: cover;
 }
 
 /* pagination */
@@ -49,15 +189,15 @@
   justify-content: center;
 
   .page-item {
-    margin: 0 2px;
+
     .page-link {
       display: inline-block;
       width: 40px;
       height: 40px;
       text-align: center;
-      color: $text-color;
-      border: 0;
-      border-radius: 5px;
+      color: $primary-color;
+      border-top: 0;
+      border-bottom: 0;
 
       &:hover {
         background: $primary-color;
@@ -65,36 +205,33 @@
       }
     }
 
+    &:first-child,
+    &:last-child {
+      .page-link {
+        border-radius: 0;
+      }
+    }
+
     &.active {
       .page-link {
-        background: $primary-color;
-        color: $white;
+        background: $white;
+        color: $text-color;
+        border: 1px solid $primary-color;
       }
     }
   }
 }
-.post-title:hover{
-  text-decoration: underline;
-}
-.post-meta{
-  color: #999;
-  a{
-    color: inherit;
-    &:hover{
-      color: $primary-color;
-    }
-  }
+
+.author-thumb-sm {
+  max-height: 165px;
+  max-width: 165px;
 }
 
 
+/* markdown style */
 .content {
   * {
     margin-bottom: 20px;
-  }
-
-  img{
-    max-width: 100%;
-    height: auto;
   }
 
   h1,
@@ -148,11 +285,11 @@
     }
 
     thead {
-      background: darken($color: $light, $amount: 2);
+      background: darken($color: $gray, $amount: 2);
     }
 
     tbody {
-      background: $light;
+      background: $gray;
 
       td {
         text-align: left !important;
@@ -163,7 +300,7 @@
 
   blockquote {
     padding: 20px;
-    background: $light;
+    background: $gray;
     border-left: 3px solid $primary-color;
 
     p {
@@ -176,7 +313,7 @@
 
   pre {
     padding: 10px 20px;
-    background: $light;
+    background: $gray;
 
     code {
       border: 0;
@@ -195,7 +332,7 @@
 
   code {
     padding: 3px 5px;
-    background: $light;
+    background: $gray;
     border: 1px solid $border-color;
     border-radius: 3px;
     color: $text-color-dark;
@@ -203,35 +340,12 @@
 
 }
 
-/* social icon */
-.social-icon{
-  a{
-    height: 45px;
-    width: 45px;
-    border: 1px solid $primary-color;
-    border-radius: 50%;
-    line-height: 45px;
-    text-align: center;
-    display: block;
-    color: $primary-color;
-    &:hover{
-      background: $primary-color;
-      color: $white;
-      text-decoration: none;
-    }
+footer a {
+  @extend .text-dark;
+  &:hover {
+    color: $primary-color !important;
+    text-decoration: underline;
   }
 }
 
-/* nav tab */
-.nav-tab{
-  .nav-link{
-    padding: 15px;
-    color: $text-color;
-    border-radius: 5px;
-    &.active{
-      @extend .shadow;
-      color: $white;
-      background: $primary-color;
-    }
-  }
-}
+/* /markdown style */
