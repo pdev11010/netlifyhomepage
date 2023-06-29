@@ -45,7 +45,7 @@ menus:
       url: "/#hero"
       weight: 1
 
-    - name: "How we work"
+    - name: "How we sleep"
       url: "/#"
       weight: 2
 
