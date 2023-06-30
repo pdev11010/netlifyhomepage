@@ -1,0 +1,6 @@
+[book]
+authors = ["hugo"]
+language = "en"
+multilingual = false
+src = "src"
+title = "the-art-of-slow-living"
